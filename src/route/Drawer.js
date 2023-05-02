@@ -13,7 +13,6 @@ const myDrawer = () => {
     return (
         <Drawer.Navigator {...param.navigator}>
             <Drawer.Screen {...param.HomeScreen} />
-           
         </Drawer.Navigator>
     );
 }
