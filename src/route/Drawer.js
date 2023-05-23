@@ -16,4 +16,8 @@ const myDrawer = () => {
         </Drawer.Navigator>
     );
 }
+const styles = StyleSheet.create({
+   
+  })
+  
 export default myDrawer;

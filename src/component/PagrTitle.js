@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+
 import { Image, StyleSheet, View } from 'react-native';
 import { headerImages } from "../assets/headerImages/headerImages";
 
 const PagrTitle = (props) => {
     const renderHeaderImage = () => {
-        const title = props.title.toLocaleLowerCase().split("");
+        const title = props.title?.toLocaleLowerCase().split("");
         console.log(title);
-        let images = title.map(letter => {
+        let images = title?.map(letter => {
             return <Image source={headerImages[letter]} style={styles.headerLetters} />
         })
         return images;
-        
     }
 
     return (

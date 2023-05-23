@@ -15,7 +15,7 @@ const menuData = [
             {
                 
                 image: require('../../assets/Green.jpg'),
-                title: "Gareen",
+                title: "Green",
                 price:30,
             },
             {

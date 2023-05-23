@@ -1,12 +1,10 @@
 
-import { useNavigation } from "@react-navigation/native";
+import { TabActions, useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { useContext, useEffect } from "react";
-import { Text, View, StyleSheet, Dimensions, Image, TouchableOpacity, Button, FlatList, TextInput, Pressable, } from "react-native";
-import { headerImages } from "../assets/headerImages/headerImages";
+import { Text, View, StyleSheet, Dimensions, Image, TouchableOpacity, Button, } from "react-native";
 import { screenName } from "../route/ScreenNames";
 import MenuContext from "../store/MenuContext";
-import Header from "./Header";
 import RatingStar from "./RatingStar";
 const Card = (props) => {
   const { total } = useContext(MenuContext);
@@ -15,7 +13,7 @@ const Card = (props) => {
   const onPressHandler = () => {
     setSupmited(!supmited);
   };
-  const { image, title, price, cardPressed,} = props;
+  const { image, title, price, cardPressed,icons} = props;
   const navigation = useNavigation();
   const onCardsPress = () => {
     if (cardPressed) {
@@ -41,6 +39,7 @@ const Card = (props) => {
           <RatingStar />
         </View>
       </View>
+      
     </TouchableOpacity>
   )
 };
@@ -54,7 +53,8 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   Container1: {
-    color: "red",
+    color: "black",
+    fontSize:20
   },
 
   CardContainer: {
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.75,
     marginTop:20,
     borderColor: "pink",
-    backgroundColor: '#FFCCDD',
+    backgroundColor: '#EB9CB1',
     paddingBottom: 10,
     // flexDirection:"row",
     // height: 230,
@@ -97,13 +97,12 @@ const styles = StyleSheet.create({
 
   catogoryStyle: {
     color: 'green',
+    fontSize:20
   },
   textContainer: {
     paddingTop: 10,
     paddingLeft: 20,
   },
-    
-
 
 })
 export default Card;

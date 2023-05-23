@@ -1,14 +1,14 @@
 
-import {View,StyleSheet, Image, TextInput} from "react-native"
+import {View,StyleSheet, Image,} from "react-native"
 import { headerImages } from "../assets/headerImages/headerImages";
 import { Sizes } from "../res/Sizes";
 const Header=(props)=>{
     const letterWidth = ( Sizes.width / (props.title.length)) - props.title.length ; 
     const renderHeaderImage = () => {
-        const title = props.title.toLocaleLowerCase().split("");
+        const title = props.title?.toLocaleLowerCase().split("");
         console.log(title);
-       let images = title.map(letter => {
-        return <Image source={headerImages[letter]}  style={styles.headerLetters(letterWidth)} />
+       let images = title?.map(letter => {
+        return <Image source={headerImages[letter]}style={styles.headerLetters(letterWidth)} />
        })
        return images;
     }

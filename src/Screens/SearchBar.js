@@ -1,17 +1,15 @@
 
 import React, { useContext, useState } from 'react';
-import { Button, FlatList, StyleSheet, Text, View, } from 'react-native';
+import {
+   StyleSheet, Text, View, } from 'react-native';
 import { SelectList } from 'react-native-dropdown-select-list';
-import { useSelect } from 'react-select-search';
 import MenuContext from '../store/MenuContext';
 const SearchBar = (props) => {
   const {menuItems} = useContext(MenuContext) ; 
   const menuData = menuItems.map((item , index) => {
     return {key: index , value : item.title , text : item.title}
   })
-
   menuData.unshift({key:999 , value:"all" , text:""})
- 
   const renderData = () => {
     // const filterdData = menuItems.filter(item=> );
     const viewArr = filterdData.map(filteredMenuData =>
@@ -30,8 +28,6 @@ const SearchBar = (props) => {
           data={menuData || []}
           save="value"
         />
-       
-       
       </View>
       </View>
   )
